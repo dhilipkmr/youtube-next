@@ -1,0 +1,42 @@
+.floatBar {
+  position: fixed;
+  background: black;
+  font-size: 15px;
+  bottom: 20px;
+  border-radius: 10px;
+  margin-left: 33%;
+  box-shadow: 1px 1px 4px #383838;
+  padding: 10px 10px;
+}
+
+.pad5 {
+  padding:5px
+}
+.white {
+  color: white;
+}
+
+.grey {
+  color:#aaaaaa
+}
+
+.ellipsis {
+  width: 350px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.hand:hover {
+  cursor: pointer;
+}
+
+.rel5{
+  position: relative;
+  top: 5px;
+}
+
+.hoverunderline:hover {
+  text-decoration: underline;
+}
