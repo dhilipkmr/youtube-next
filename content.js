@@ -1,7 +1,7 @@
 console.log('hi');
 
 function NextVideoPlayer() {
-
+  this.totalElements = 0;
 }
 
 NextVideoPlayer.prototype.addPlayNextButton = function() {
@@ -32,6 +32,13 @@ NextVideoPlayer.prototype.handlePlayNextClick = function(e, currHref, $videoCard
   }
   if (!this.hasFloatingBar) {
     this.createFloatingBar($videoCard);
+  }
+  if (this.floatbarExpand) {
+    const $wrapper = document.getElementById('wrapperPlaylist');
+    const $div = document.createElement('div');
+    $div.className = "pad5";
+    $div.innerHTML = `<span class="white">${ this.selectedhref.length }. <a href=${currHref} class="grey ellipsis rel5 hoverunderline">${$videoCard.querySelector('#video-title').innerText}</a></span>`;
+    $wrapper.append($div);
   }
   if (e.target.innerText === 'Play Next') {
     this.updateText(e.target);
@@ -78,10 +85,12 @@ NextVideoPlayer.prototype.togglePlaylist = function(e) {
     e.currentTarget.innerHTML = '';
     e.currentTarget.append($wrapper);
     e.currentTarget.append($children);
+    document.getElementById('Layer_1').classList.add('reverse');
   } else {
     const $children = e.currentTarget.children[e.currentTarget.childElementCount - 1];
     e.currentTarget.innerHTML = '';
     e.currentTarget.append($children);
+    document.getElementById('Layer_1').classList.remove('reverse');
   }
   this.floatbarExpand = !this.floatbarExpand;
 }

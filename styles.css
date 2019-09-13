@@ -40,3 +40,9 @@
 .hoverunderline:hover {
   text-decoration: underline;
 }
+
+.reverse{
+  transform: rotate(180deg) scaleX(-1);
+  position: relative;
+  top: 5px;
+}

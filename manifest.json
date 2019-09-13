@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "name": "Youtube Play Next",
-  "version": "0.1",
+  "version": "1",
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://*.youtube.com/*"],
       "js": ["content.js"],
       "css": ["styles.css"]
     }
@@ -16,6 +16,7 @@
     "default_icon": "youtube.png"
   },
   "permissions": [
+    "https://*.youtube.com/*"
   ],
   "icons": {
     "16": "youtube-16x16.png",
